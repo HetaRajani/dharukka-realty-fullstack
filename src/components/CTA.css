@@ -1,0 +1,64 @@
+.cta-section {
+  position: relative;
+  height: 520px;
+  background-image: url("../../public/project1.jpeg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  margin: 0;
+}
+
+.cta-white-gap {
+  height: 130px;
+  background: #fff;
+}
+
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.62);
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.cta-label {
+  letter-spacing: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 22px;
+}
+
+.cta-content h2 {
+  font-family: Georgia, serif;
+  font-size: 58px;
+  line-height: 1.12;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.cta-desc {
+  color: #ddd;
+  font-size: 16px;
+  margin-bottom: 34px;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: #fff;
+  color: #111;
+  padding: 18px 42px;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+}
