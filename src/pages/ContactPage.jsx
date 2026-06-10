@@ -22,7 +22,7 @@ function ContactPage() {
     try {
       setLoading(true);
 
-      const res = await fetch("http://localhost:5001/api/contact", {
+      const res = await fetch("https://dharukka-realty-fullstack.onrender.com/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

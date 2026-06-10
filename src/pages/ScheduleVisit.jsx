@@ -21,14 +21,16 @@ function ScheduleVisit() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5001/api/visit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
+     const res = await fetch(
+  "https://dharukka-realty-fullstack.onrender.com/api/visit",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formData),
+  }
+);
       if (res.ok) {
         alert("Visit booked successfully!");
 
