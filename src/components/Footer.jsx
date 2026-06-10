@@ -1,4 +1,5 @@
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -12,18 +13,18 @@ function Footer() {
   <span>Creating legacies.</span>
 </h2>
           <div className="social-icons">
-            <a href="#">◎</a>
-            <a href="#">in</a>
-            <a href="#">▶</a>
+           <a href="https://instagram.com" target="_blank" rel="noreferrer">◎</a>
+<a href="https://linkedin.com" target="_blank" rel="noreferrer">in</a>
+<a href="https://youtube.com" target="_blank" rel="noreferrer">▶</a>
           </div>
         </div>
 
         <div className="footer-links">
           <h4>EXPLORE</h4>
-          <a href="#projects">All Projects</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-          <a href="#careers">Careers</a>
+          <Link to="/projects">All Projects</Link>
+<Link to="/about">About</Link>
+<Link to="/contact">Contact</Link>
+<Link to="/contact">Careers</Link>
           <a href="#">Press</a>
         </div>
 
