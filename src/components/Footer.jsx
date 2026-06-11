@@ -6,40 +6,23 @@ function Footer() {
     <footer className="footer">
       <div className="footer-main">
         <div className="footer-brand">
-          <img src="/logo.png" alt="Dharukka Realty" />
+          <p className="footer-logo-text">Dharukka.</p>
 
           <h2>
-            Building landmarks.
+            Building landmarks. <span>Creating</span>
             <br />
-            <span>Creating legacies.</span>
+            <span>legacies.</span>
           </h2>
 
           <div className="footer-socials">
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Instagram"
-            >
+            <a href="https://instagram.com" target="_blank" rel="noreferrer">
               ◎
             </a>
-
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
-            >
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer">
               in
             </a>
-
-            <a
-              href="https://youtube.com"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="YouTube"
-            >
-              ▶
+            <a href="https://youtube.com" target="_blank" rel="noreferrer">
+              ▻
             </a>
           </div>
         </div>
@@ -55,14 +38,14 @@ function Footer() {
 
         <div className="footer-contact">
           <p>GET IN TOUCH</p>
-          <span>✧ Dharukka Reality, Anand, Gujarat</span>
+          <span>⌖ Dharukka House, Anand, Gujarat</span>
           <span>☎ +91 98765 43210</span>
           <span>✉ info@dharukkareality.com</span>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <span>© 2026 Dharukka Reality. All rights reserved.</span>
+        <span>© 2026 Dharukka Realty. All rights reserved.</span>
         <span>RERA Registered · Privacy · Terms</span>
       </div>
     </footer>
