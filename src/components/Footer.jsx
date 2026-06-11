@@ -6,7 +6,7 @@ function Footer() {
     <footer className="footer">
       <div className="footer-main">
         <div className="footer-brand">
-          <p className="footer-logo-text">Dharukka.</p>
+         <img className="footer-logo" src="/logo.png" alt="Dharukka Realty" />
 
           <h2>
             Building landmarks. <span>Creating</span>
@@ -38,8 +38,8 @@ function Footer() {
 
         <div className="footer-contact">
           <p>GET IN TOUCH</p>
-          <span>⌖ Dharukka House, Anand, Gujarat</span>
-          <span>☎ +91 98765 43210</span>
+          <span>⌖ Dharukka House, Bandra Kurla Complex, Mumbai 400051</span>
+          <span>☎ +91 2261004000</span>
           <span>✉ info@dharukkareality.com</span>
         </div>
       </div>

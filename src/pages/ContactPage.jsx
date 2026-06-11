@@ -65,12 +65,13 @@ function ContactPage() {
           <div className="contact-info">
             <div>
               <h4>VISIT</h4>
-              <p>Dharukka Reality, Anand, Gujarat</p>
+              <p>Dharukka Reality,Bandra Kurla Complex, Mumbai 400051
+</p>
             </div>
 
             <div>
               <h4>CALL</h4>
-              <p>+91 98765 43210</p>
+              <p>+91 2261004000</p>
             </div>
 
             <div>
