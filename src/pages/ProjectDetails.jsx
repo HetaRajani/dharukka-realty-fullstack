@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import { useState } from "react";
 import "./ProjectDetails.css";
 
 const projectData = {
@@ -28,6 +29,48 @@ const projectData = {
 function ProjectDetails() {
   const { id } = useParams();
   const project = projectData[id] || projectData["premium-villas"];
+  const [loading, setLoading] = useState(false);
+
+  const handleInquirySubmit = async (e) => {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+
+    const formData = {
+      firstName: form.fullName.value,
+      lastName: "",
+      email: form.email.value,
+      phone: form.phone.value,
+      interest: project.title,
+      message: form.message.value,
+    };
+
+    try {
+      setLoading(true);
+
+      const res = await fetch(
+        "https://dharukka-realty-fullstack.onrender.com/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (res.ok) {
+        alert("Invitation request sent successfully!");
+        form.reset();
+      } else {
+        alert("Something went wrong.");
+      }
+    } catch (error) {
+      alert("Server error. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <main className="pd-page">
@@ -38,14 +81,13 @@ function ProjectDetails() {
         <div className="pd-overlay"></div>
 
         <div className="pd-hero-content">
-          <Link to="/projects" className="pd-back">← All Projects</Link>
+          <Link to="/projects" className="pd-back">
+            ← All Projects
+          </Link>
 
           <p>{project.status} · Residential</p>
-
           <h1>{project.title}</h1>
-
           <h4>{project.subtitle}</h4>
-
           <span>⌖ {project.location}</span>
         </div>
       </section>
@@ -61,11 +103,26 @@ function ProjectDetails() {
         </div>
 
         <div className="pd-stats">
-          <div><span>Status</span><strong>{project.status}</strong></div>
-          <div><span>Typology</span><strong>Premium Residences</strong></div>
-          <div><span>Location</span><strong>{project.location}</strong></div>
-          <div><span>Completion</span><strong>2027</strong></div>
-          <div><span>Progress</span><strong>68%</strong></div>
+          <div>
+            <span>Status</span>
+            <strong>{project.status}</strong>
+          </div>
+          <div>
+            <span>Typology</span>
+            <strong>Premium Residences</strong>
+          </div>
+          <div>
+            <span>Location</span>
+            <strong>{project.location}</strong>
+          </div>
+          <div>
+            <span>Completion</span>
+            <strong>2027</strong>
+          </div>
+          <div>
+            <span>Progress</span>
+            <strong>68%</strong>
+          </div>
         </div>
       </section>
 
@@ -117,22 +174,33 @@ function ProjectDetails() {
             {project.title}.
           </h2>
 
-          <p className="pd-note">
-            Our team will be in touch within 24 hours.
-          </p>
+          <p className="pd-note">Our team will be in touch within 24 hours.</p>
 
           <div className="pd-buttons">
             <a href="tel:+919876543210">CALL NOW</a>
-            <a href="https://wa.me/919876543210">WHATSAPP</a>
+            <a
+              href="https://wa.me/919876543210"
+              target="_blank"
+              rel="noreferrer"
+            >
+              WHATSAPP
+            </a>
           </div>
         </div>
 
-        <form className="pd-form">
-          <input type="text" placeholder="Full name" />
-          <input type="email" placeholder="Email address" />
-          <input type="tel" placeholder="Phone number" />
-          <textarea placeholder="Tell us about your requirement"></textarea>
-          <button type="submit">REQUEST INVITATION</button>
+        <form className="pd-form" onSubmit={handleInquirySubmit}>
+          <input type="text" name="fullName" placeholder="Full name" required />
+          <input type="email" name="email" placeholder="Email address" required />
+          <input type="tel" name="phone" placeholder="Phone number" required />
+          <textarea
+            name="message"
+            placeholder="Tell us about your requirement"
+            required
+          ></textarea>
+
+          <button type="submit" disabled={loading}>
+            {loading ? "SENDING..." : "REQUEST INVITATION"}
+          </button>
         </form>
       </section>
     </main>
