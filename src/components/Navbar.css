@@ -99,3 +99,28 @@
     justify-self: center;
   }
 }
+
+.menu-icon {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-links,
+  .schedule-btn {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .logo img {
+    height: 45px;
+  }
+}

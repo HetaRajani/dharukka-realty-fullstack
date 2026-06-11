@@ -22,6 +22,8 @@ function Navbar() {
         <img src="/logo.png" alt="Dharukka Realty" />
       </Link>
 
+      <div className="menu-icon">☰</div>
+
       <div className="nav-links">
         <NavLink to="/" end>Home</NavLink>
         <NavLink to="/projects">Projects</NavLink>
