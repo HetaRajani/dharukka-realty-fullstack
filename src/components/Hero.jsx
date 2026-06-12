@@ -7,14 +7,10 @@ function Hero() {
     <section
       className="hero"
       style={{
-        backgroundImage:
-          "linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.65)), url('/project1.jpeg')",
+        backgroundImage: "url('/hero-luxury-villa.jpg')",
       }}
     >
-      <div className="hero-overlay"></div>
-
       <div className="hero-content">
-
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -37,17 +33,17 @@ function Hero() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: .5 }}
+          transition={{ delay: 0.5 }}
           className="hero-desc"
         >
-          Creating landmark residences with timeless architecture,
-          luxury finishes and exceptional lifestyle experiences.
+          Creating landmark residences with timeless architecture, luxury
+          finishes and exceptional lifestyle experiences.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: .8 }}
+          transition={{ delay: 0.8 }}
           className="hero-buttons"
         >
           <Link to="/projects" className="explore-btn">
@@ -59,11 +55,24 @@ function Hero() {
           </Link>
         </motion.div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1 }}
+          className="hero-stats"
+        >
+
+          <div className="hero-tags">
+  <span>20+ Years Experience</span>
+  <span>500+ Happy Families</span>
+  <span>10+ Premium Projects</span>
+</div>
+         
+ 
+        </motion.div>
       </div>
 
-      <div className="scroll-indicator">
-  Scroll
-</div>
+      <div className="scroll-indicator">Scroll</div>
     </section>
   );
 }

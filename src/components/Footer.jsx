@@ -37,7 +37,7 @@ function Footer() {
 
         <div className="footer-contact">
           <p>GET IN TOUCH</p>
-          <span>⌖ Dharukka House, Bandra Kurla Complex, Mumbai 400051</span>
+          <span>⌖ Dharukka House,bhavnagar , gujrat</span>
           <span>☎ +91 2261004000</span>
           <span>✉ info@dharukkareality.com</span>
         </div>

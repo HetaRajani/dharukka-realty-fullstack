@@ -1,5 +1,4 @@
 import "./Stats.css";
-import CountUp from "react-countup";
 
 function Stats() {
   return (
@@ -7,37 +6,42 @@ function Stats() {
       <div className="stats-inner">
         <div className="stats-heading">
           <p>BY THE NUMBERS</p>
-
           <h2>
-            Twenty-six years. One <br />
-            uncompromising standard.
+            Twenty-six years.
+            <br />
+            One uncompromising standard.
           </h2>
         </div>
 
         <div className="stats-grid">
           <div className="stat">
-            <h3><CountUp end={42} duration={2.5} />+</h3>
-            <span>PROJECTS COMPLETED</span>
+            <h3>42+</h3>
+            <div className="stat-line"></div>
+            <p>Projects Completed</p>
           </div>
 
           <div className="stat">
-            <h3><CountUp end={9} duration={2.5} /></h3>
-            <span>PROJECTS ONGOING</span>
+            <h3>9</h3>
+            <div className="stat-line"></div>
+            <p>Projects Ongoing</p>
           </div>
 
           <div className="stat">
-            <h3><CountUp end={26} duration={2.5} /></h3>
-            <span>YEARS OF EXPERIENCE</span>
+            <h3>26</h3>
+            <div className="stat-line"></div>
+            <p>Years of Experience</p>
           </div>
 
           <div className="stat">
-            <h3><CountUp end={12000} duration={2.5} separator="," />+</h3>
-            <span>HAPPY FAMILIES</span>
+            <h3>12000+</h3>
+            <div className="stat-line"></div>
+            <p>Happy Families</p>
           </div>
 
           <div className="stat">
-            <h3><CountUp end={18} duration={2.5} />Mn</h3>
-            <span>SQ FT DELIVERED</span>
+            <h3>18Mn</h3>
+            <div className="stat-line"></div>
+            <p>Sq Ft Delivered</p>
           </div>
         </div>
       </div>

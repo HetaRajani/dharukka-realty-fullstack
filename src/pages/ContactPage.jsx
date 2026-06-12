@@ -6,7 +6,6 @@ function ContactPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    e.stopPropagation();
 
     const form = e.currentTarget;
 
@@ -22,13 +21,14 @@ function ContactPage() {
     try {
       setLoading(true);
 
-      const res = await fetch("https://dharukka-realty-fullstack.onrender.com/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        "https://dharukka-realty-fullstack.onrender.com/api/contact",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const data = await res.json();
 
@@ -52,26 +52,35 @@ function ContactPage() {
           <p className="contact-label">CONCIERGE</p>
 
           <h1>
-            Let's plan something
+            Let's Talk About
             <br />
-            <span>extraordinary.</span>
+            Your Dream
+            <br />
+            <span>Property.</span>
           </h1>
 
           <p className="contact-desc">
-            Whether you're exploring a residence or considering a partnership,
-            our team will be in touch within 24 hours.
+            Whether you are looking for a home, investment or partnership, our
+            team will contact you soon.
           </p>
 
           <div className="contact-info">
             <div>
               <h4>VISIT</h4>
-              <p>Dharukka Reality,Bandra Kurla Complex, Mumbai 400051
-</p>
+              <p>
+                Near Shree Swaminarayan Gurukul, Akvada,
+                <br />
+                Rajeshwar Park-3, Bhavnagar, Gujarat
+              </p>
             </div>
 
             <div>
               <h4>CALL</h4>
-              <p>+91 2261004000</p>
+              <p>
+                Jaytibhai: +91 76219 01901
+                <br />
+                Timalbhai: +91 96626 49333
+              </p>
             </div>
 
             <div>
@@ -81,58 +90,34 @@ function ContactPage() {
 
             <div>
               <h4>HOURS</h4>
-              <p>Mon–Sat · 10:00 to 19:00 IST</p>
+              <p>Mon–Sat · 10:00 AM to 7:00 PM IST</p>
             </div>
-          </div>
-
-          <div className="contact-map">
-            <p>
-              Dharukka Reality
-              <br />
-              Anand, Gujarat
-            </p>
           </div>
         </div>
 
         <div className="contact-right">
-          <form className="contact-form" onSubmit={handleSubmit} noValidate>
-            <div className="form-row">
-              <input
-                type="text"
-                name="firstName"
-                placeholder="First name"
-                required
-              />
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <h2>Get in Touch</h2>
+            <p>
+              Fill out the form and our team will get back to you within 24
+              hours.
+            </p>
 
-              <input
-                type="text"
-                name="lastName"
-                placeholder="Last name"
-                required
-              />
+            <div className="form-row">
+              <input type="text" name="firstName" placeholder="First name" required />
+              <input type="text" name="lastName" placeholder="Last name" required />
             </div>
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Email address"
-              required
-            />
-
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone number"
-              required
-            />
+            <input type="email" name="email" placeholder="Email address" required />
+            <input type="tel" name="phone" placeholder="Phone number" required />
 
             <select name="interest" defaultValue="" required>
               <option value="" disabled>
                 I'm interested in...
               </option>
-              <option value="Premium Villas">Premium Villas</option>
-              <option value="Twin Residences">Twin Residences</option>
-              <option value="Luxury Homes">Luxury Homes</option>
+              <option value="Residential Plot">Residential Plot</option>
+              <option value="Property Visit">Property Visit</option>
+              <option value="Investment">Investment</option>
               <option value="Partnership">Partnership</option>
             </select>
 
@@ -140,10 +125,10 @@ function ContactPage() {
               name="message"
               placeholder="Tell us about your requirement"
               required
-            ></textarea>
+            />
 
             <button type="submit" disabled={loading}>
-              {loading ? "SENDING..." : "SEND INQUIRY"}
+              {loading ? "SENDING..." : "SEND INQUIRY →"}
             </button>
           </form>
         </div>
